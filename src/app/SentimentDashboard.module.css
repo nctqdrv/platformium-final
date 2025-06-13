@@ -479,3 +479,22 @@
   color: #E9D7FE;
 
 }
+
+.emailRow {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .emailRow {
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+  }
+  .emailRow input,
+  .emailRow button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

@@ -83,7 +83,7 @@ export default function WaitlistForm() {
         </div>
       ) : (
         <>
-          <div style={{ display: 'flex', gap: 16, width: '100%' }}>
+          <div className={styles.emailRow}>
             <input
               type="email"
               placeholder="E-mail ünvanınız"
@@ -91,7 +91,6 @@ export default function WaitlistForm() {
               onChange={handleEmailChange}
               disabled={loading}
               required
-              style={{ flex: 1 }}
             />
             <button type="submit" disabled={loading}>
               {loading ? 'Göndərilir...' : 'Siyahıya qoşulun'}

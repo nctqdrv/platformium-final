@@ -83,17 +83,20 @@ export default function WaitlistForm() {
         </div>
       ) : (
         <>
-          <input
-            type="email"
-            placeholder="E-mail ünvanınız"
-            value={email}
-            onChange={handleEmailChange}
-            disabled={loading}
-            required
-          />
-          <button type="submit" disabled={loading}>
-            {loading ? 'Göndərilir...' : 'Siyahıya qoşulun'}
-          </button>
+          <div style={{ display: 'flex', gap: 16, width: '100%' }}>
+            <input
+              type="email"
+              placeholder="E-mail ünvanınız"
+              value={email}
+              onChange={handleEmailChange}
+              disabled={loading}
+              required
+              style={{ flex: 1 }}
+            />
+            <button type="submit" disabled={loading}>
+              {loading ? 'Göndərilir...' : 'Siyahıya qoşulun'}
+            </button>
+          </div>
           {error && (
             <div
               style={{

@@ -157,8 +157,8 @@
 
 .emailForm {
   display: flex;
-  gap: 16px;
-  margin-top: 24px;
+  flex-direction: column;
+  gap: 0;
   width: 100%;
 }
 

@@ -5,6 +5,9 @@ import styles from './SentimentDashboard.module.css';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+console.log('SUPABASE_URL:', process.env.NEXT_PUBLIC_SUPABASE_URL);
+console.log('SUPABASE_KEY:', process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
+
 export default function WaitlistForm() {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
@@ -12,6 +15,7 @@ export default function WaitlistForm() {
   const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
+    console.log('Form gönderildi, email:', email);
     e.preventDefault();
     setSuccess('');
     setError('');

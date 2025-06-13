@@ -63,61 +63,35 @@ export default function WaitlistForm() {
   };
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.header}>
-        <div className={styles.logo}>
-          <img src="/Logo.png" alt="Platformium Logo" className={styles.logoImage} />
+    <form className={styles.emailForm} onSubmit={handleSubmit}>
+      {success && (
+        <div style={{
+          width: '100%',
+          background: '#B7F7C7',
+          color: '#14532d',
+          borderRadius: '8px',
+          padding: '16px',
+          margin: '12px 0',
+          fontWeight: 600,
+          fontSize: '18px',
+          textAlign: 'center',
+          boxShadow: '0 2px 8px 0 rgba(0,0,0,0.04)'
+        }}>
+          Təşəkkür edirik!
         </div>
-      </div>
-      <main className={styles.mainContent}>
-        <section className={styles.heroSection}>
-          <div className={styles.heroText}>
-            <div className={styles.headingGroup}>
-              <h1>
-                Azərbaycan dilində <span className={styles.highlight}>sosial dinləmə platforması</span>
-              </h1>
-              <p>Azərbaycan dilini başa düşən ilk və tək sentiment və mövzu analizi aləti</p>
-            </div>
-            {/* Success Alert */}
-            {success && (
-              <div style={{
-                width: '100%',
-                background: '#B7F7C7',
-                color: '#14532d',
-                borderRadius: '8px',
-                padding: '16px',
-                margin: '12px 0',
-                fontWeight: 600,
-                fontSize: '18px',
-                textAlign: 'center',
-                boxShadow: '0 2px 8px 0 rgba(0,0,0,0.04)'
-              }}>
-                Təşəkkür edirik!
-              </div>
-            )}
-            <form className={styles.emailForm} onSubmit={handleSubmit}>
-              <input
-                type="email"
-                placeholder="E-mail ünvanınız"
-                value={email}
-                onChange={handleEmailChange}
-                disabled={loading}
-                required
-              />
-              <button type="submit" disabled={loading}>
-                {loading ? 'Göndərilir...' : 'Siyahıya qoşulun'}
-              </button>
-            </form>
-            <span className={styles.hint}>
-              Qeydiyyat edərək <a href="#">istifadəçi şərtlərini</a> qəbul edirsiniz
-            </span>
-            {error && <span className={styles.hint} style={{ color: '#FFD6D6', display: 'block' }}>{error}</span>}
-          </div>
-          <div className={styles.mockupWrapper}>
-            <img src="/Mockup.png" alt="Sentiment Chart Mockup" className={styles.chartImage} />
-          </div>
-        </section>
-      </main>
-    </div>
+      )}
+      <input
+        type="email"
+        placeholder="E-mail ünvanınız"
+        value={email}
+        onChange={handleEmailChange}
+        disabled={loading}
+        required
+      />
+      <button type="submit" disabled={loading}>
+        {loading ? 'Göndərilir...' : 'Siyahıya qoşulun'}
+      </button>
+      {error && <span className={styles.hint} style={{ color: '#FFD6D6', display: 'block' }}>{error}</span>}
+    </form>
   );
 } 

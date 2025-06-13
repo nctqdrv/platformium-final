@@ -34,7 +34,7 @@ body {
 }
 
 @media (max-width: 600px) {
-  body {
-    background: #53389E !important;
+  html, body {
+    background: #fff !important;
   }
 }

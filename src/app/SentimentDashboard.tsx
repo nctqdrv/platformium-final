@@ -1,6 +1,7 @@
 "use client";
 import styles from './SentimentDashboard.module.css';
 import { useEffect, useState } from 'react';
+import WaitlistForm from './WaitlistForm';
 
 export default function SentimentDashboard() {
   const [isMobile, setIsMobile] = useState(false);
@@ -34,10 +35,7 @@ export default function SentimentDashboard() {
               </h1>
               <p>Azərbaycan dilini başa düşən ilk və tək sentiment və mövzu analizi aləti</p>
             </div>
-            <form className={styles.emailForm}>
-              <input type="email" placeholder="E-mail ünvanınız" required />
-              <button type="submit">Siyahıya qoşulun</button>
-            </form>
+            <WaitlistForm />
             <span className={styles.hint}>
               Qeydiyyat edərək <a href="#">istifadəçi şərtlərini</a> qəbul edirsiniz
             </span>

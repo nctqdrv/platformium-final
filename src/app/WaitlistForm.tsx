@@ -7,6 +7,7 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 console.log('SUPABASE_URL:', process.env.NEXT_PUBLIC_SUPABASE_URL);
 console.log('SUPABASE_KEY:', process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
+console.log('WaitlistForm YÜKLENDİ!');
 
 export default function WaitlistForm() {
   const [email, setEmail] = useState('');

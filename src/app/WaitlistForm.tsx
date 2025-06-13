@@ -95,12 +95,22 @@ export default function WaitlistForm() {
             {loading ? 'Göndərilir...' : 'Siyahıya qoşulun'}
           </button>
           {error && (
-            <span
-              className={styles.hint}
-              style={{ color: '#FFD6D6', display: 'block' }}
+            <div
+              style={{
+                width: '100%',
+                background: '#FFD6D6',
+                color: '#7F1D1D',
+                borderRadius: '8px',
+                padding: '12px',
+                margin: '12px 0 0 0',
+                fontWeight: 600,
+                fontSize: '16px',
+                textAlign: 'center',
+                boxShadow: '0 2px 8px 0 rgba(0,0,0,0.04)'
+              }}
             >
               {error}
-            </span>
+            </div>
           )}
         </>
       )}

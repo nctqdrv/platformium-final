@@ -64,34 +64,46 @@ export default function WaitlistForm() {
 
   return (
     <form className={styles.emailForm} onSubmit={handleSubmit}>
-      {success && (
-        <div style={{
-          width: '100%',
-          background: '#B7F7C7',
-          color: '#14532d',
-          borderRadius: '8px',
-          padding: '16px',
-          margin: '12px 0',
-          fontWeight: 600,
-          fontSize: '18px',
-          textAlign: 'center',
-          boxShadow: '0 2px 8px 0 rgba(0,0,0,0.04)'
-        }}>
+      {success ? (
+        <div
+          style={{
+            width: '100%',
+            background: '#B7F7C7',
+            color: '#14532d',
+            borderRadius: '8px',
+            padding: '16px',
+            margin: '12px 0',
+            fontWeight: 600,
+            fontSize: '18px',
+            textAlign: 'center',
+            boxShadow: '0 2px 8px 0 rgba(0,0,0,0.04)'
+          }}
+        >
           Təşəkkür edirik!
         </div>
+      ) : (
+        <>
+          <input
+            type="email"
+            placeholder="E-mail ünvanınız"
+            value={email}
+            onChange={handleEmailChange}
+            disabled={loading}
+            required
+          />
+          <button type="submit" disabled={loading}>
+            {loading ? 'Göndərilir...' : 'Siyahıya qoşulun'}
+          </button>
+          {error && (
+            <span
+              className={styles.hint}
+              style={{ color: '#FFD6D6', display: 'block' }}
+            >
+              {error}
+            </span>
+          )}
+        </>
       )}
-      <input
-        type="email"
-        placeholder="E-mail ünvanınız"
-        value={email}
-        onChange={handleEmailChange}
-        disabled={loading}
-        required
-      />
-      <button type="submit" disabled={loading}>
-        {loading ? 'Göndərilir...' : 'Siyahıya qoşulun'}
-      </button>
-      {error && <span className={styles.hint} style={{ color: '#FFD6D6', display: 'block' }}>{error}</span>}
     </form>
   );
 } 
